@@ -404,6 +404,26 @@
           }
         },
         {
+          "title": "Estimate Fuel Passed",
+          "description": "Estimate the Total Fuel Passeded in TeleOp.",
+          "type": "select",
+          "required": false,
+          "code": "TelePassedAmount",
+          "formResetBehavior": "reset",
+          "defaultValue": "",
+          "choices": {
+            "0": "0 Passed",
+            "5": "1-10 Passed",
+            "25": "10-40 Passed",
+            "55": "40-70 Passed",
+            "85": "70-100 Passed",
+            "150": "100-200 Passed",
+            "250": "200-300 Passed",
+            "350": "300-400 Passed",
+            "400": ">400 Passed"
+          }
+        },
+        {
           "title": "Bump and/or Trench",
           "description": "Did the robot move over the bump or under the trench?",
           "type": "multi-select",
