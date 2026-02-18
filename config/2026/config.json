@@ -102,7 +102,8 @@
           "required": true,
           "code": "matchNumber",
           "formResetBehavior": "increment",
-          "defaultValue": 1
+          "defaultValue": 1,
+          "min": 1
         }
       ]
     },
@@ -228,6 +229,7 @@
           "code": "MissedFuelAuto",
           "formResetBehavior": "reset",
           "defaultValue": 0,
+          "min": 0,
           "step": 1
         },
         {
@@ -358,13 +360,12 @@
       "fields": [
         {
           "title": "Defense Type",
-          "description": "Did the robot engage in any types of defense? If so, which ones?",
+          "description": "Did the robot engage in any types of defense? Disruption: using the robot against the opposing alliance to disrupt or limit their ability to score. Fuel stealing: picking up fuel on the ground of the opposing alliance zone. Blocking Trenches: using the robot to limit movement via the trenches. Blocking bumps: using the robot to limit movement via the bumps.",
           "type": "multi-select",
           "required": false,
           "code": "DefenseTypeTele",
           "formResetBehavior": "reset",
           "choices": {
-            "None": "No types of defense",
             "Disruption": "Disrupting Shots",
             "Fuel stealing": "Fuel Stealing",
             "Blocking Trenches": "Blocking Trenches",
@@ -509,6 +510,7 @@
           "code": "TeleTransitionCycles",
           "formResetBehavior": "reset",
           "defaultValue": 0,
+          "min": 0,
           "step": 1
         }
       ]
@@ -521,7 +523,7 @@
           "description": "The number of Fuel shot at the Hub that missed during the Transition Shift of TeleOp.",
           "type": "select",
           "required": false,
-          "code": "TeleTransitionMissed",
+          "code": "Tele1stShiftMissed",
           "formResetBehavior": "reset",
           "defaultValue": "",
           "choices": {
@@ -558,6 +560,7 @@
           "code": "Tele1stShiftCycles",
           "formResetBehavior": "reset",
           "defaultValue": 0,
+          "min": 0,
           "step": 1
         }
       ]
@@ -570,7 +573,7 @@
           "description": "The number of Fuel shot at the Hub that missed during the Transition Shift of TeleOp.",
           "type": "select",
           "required": false,
-          "code": "TeleTransitionMissed",
+          "code": "Tele2ndShiftMissed",
           "formResetBehavior": "reset",
           "defaultValue": "",
           "choices": {
@@ -607,6 +610,7 @@
           "code": "Tele2ndShiftCycles",
           "formResetBehavior": "reset",
           "defaultValue": 0,
+          "min": 0,
           "step": 1
         }
       ]
@@ -619,7 +623,7 @@
           "description": "The number of Fuel shot at the Hub that missed during the Transition Shift of TeleOp.",
           "type": "select",
           "required": false,
-          "code": "TeleTransitionMissed",
+          "code": "TeleEndgameMissed",
           "formResetBehavior": "reset",
           "defaultValue": "",
           "choices": {
@@ -656,6 +660,7 @@
           "code": "TeleEndgameCycles",
           "formResetBehavior": "reset",
           "defaultValue": 0,
+          "min": 0,
           "step": 1
         }
       ]
