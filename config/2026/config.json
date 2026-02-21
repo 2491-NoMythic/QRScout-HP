@@ -81,7 +81,7 @@
           "choices": {
             "NoMythic": "2491 - NoMythic",
             "The Robettes": "2177 - The Robettes",
-            "Talon Robotics" :"2502 - Talon Robotics"
+            "Talon Robotics": "2502 - Talon Robotics"
           }
         },
         {
@@ -235,7 +235,7 @@
           "step": 1
         },
         {
-          "title": "Fuel Left (Auto)",
+          "title": "Fuel Left in Robot (Auto)",
           "description": "Estimate how many fuel are left in robot at the end of Auto.",
           "type": "select",
           "required": false,
@@ -471,23 +471,6 @@
       "name": "Transition Shift",
       "fields": [
         {
-          "title": "Fuel Missed",
-          "description": "The number of Fuel shot at the Hub that missed during the Transition Shift of TeleOp.",
-          "type": "select",
-          "required": false,
-          "code": "TeleTransitionMissed",
-          "formResetBehavior": "reset",
-          "defaultValue": "",
-          "choices": {
-            "0": "None: 0",
-            "5": "A few: 1-10",
-            "20": "Several: 10-30",
-            "40": "Many: 40-60",
-            "60": "A Lot: 60-80",
-            "80": "Full Hopper: >80"
-          }
-        },
-        {
           "title": "Estimate Fuel Scored",
           "description": "Estimate the Total Fuel Scored in the Transition Shift of TeleOp.",
           "type": "select",
@@ -502,6 +485,23 @@
             "55": "40-70 Scored",
             "85": "70-100 Scored",
             "100": ">100 Scored"
+          }
+        },
+        {
+          "title": "Fuel Missed",
+          "description": "The number of Fuel shot at the Hub that missed during the Transition Shift of TeleOp.",
+          "type": "select",
+          "required": false,
+          "code": "TeleTransitionMissed",
+          "formResetBehavior": "reset",
+          "defaultValue": "",
+          "choices": {
+            "0": "None: 0",
+            "5": "A few: 1-10",
+            "20": "Several: 10-30",
+            "40": "Many: 40-60",
+            "60": "A Lot: 60-80",
+            "80": "Full Hopper: >80"
           }
         },
         {
@@ -521,23 +521,6 @@
       "name": "1st Scoring Shift",
       "fields": [
         {
-          "title": "Fuel Missed",
-          "description": "The number of Fuel shot at the Hub that missed during the Transition Shift of TeleOp.",
-          "type": "select",
-          "required": false,
-          "code": "Tele1stShiftMissed",
-          "formResetBehavior": "reset",
-          "defaultValue": "",
-          "choices": {
-            "0": "None: 0",
-            "5": "A few: 1-10",
-            "20": "Several: 10-30",
-            "40": "Many: 40-60",
-            "60": "A Lot: 60-80",
-            "80": "Full Hopper: >80"
-          }
-        },
-        {
           "title": "Estimate Fuel Scored",
           "description": "Estimate the Total Fuel Scored in the 1st Scoring Shift of TeleOp.",
           "type": "select",
@@ -552,6 +535,23 @@
             "55": "40-70 Scored",
             "85": "70-100 Scored",
             "100": ">100 Scored"
+          }
+        },
+        {
+          "title": "Fuel Missed",
+          "description": "The number of Fuel shot at the Hub that missed during the Transition Shift of TeleOp.",
+          "type": "select",
+          "required": false,
+          "code": "Tele1stShiftMissed",
+          "formResetBehavior": "reset",
+          "defaultValue": "",
+          "choices": {
+            "0": "None: 0",
+            "5": "A few: 1-10",
+            "20": "Several: 10-30",
+            "40": "Many: 40-60",
+            "60": "A Lot: 60-80",
+            "80": "Full Hopper: >80"
           }
         },
         {
@@ -571,23 +571,6 @@
       "name": "2nd Scoring Shift",
       "fields": [
         {
-          "title": "Fuel Missed",
-          "description": "The number of Fuel shot at the Hub that missed during the Transition Shift of TeleOp.",
-          "type": "select",
-          "required": false,
-          "code": "Tele2ndShiftMissed",
-          "formResetBehavior": "reset",
-          "defaultValue": "",
-          "choices": {
-            "0": "None: 0",
-            "5": "A few: 1-10",
-            "20": "Several: 10-30",
-            "40": "Many: 40-60",
-            "60": "A Lot: 60-80",
-            "80": "Full Hopper: >80"
-          }
-        },
-        {
           "title": "Estimate Fuel Scored",
           "description": "Estimate the Total Fuel Scored in the 2nd Scoring Shift of TeleOp.",
           "type": "select",
@@ -602,6 +585,23 @@
             "55": "40-70 Scored",
             "85": "70-100 Scored",
             "100": ">100 Scored"
+          }
+        },
+        {
+          "title": "Fuel Missed",
+          "description": "The number of Fuel shot at the Hub that missed during the Transition Shift of TeleOp.",
+          "type": "select",
+          "required": false,
+          "code": "Tele2ndShiftMissed",
+          "formResetBehavior": "reset",
+          "defaultValue": "",
+          "choices": {
+            "0": "None: 0",
+            "5": "A few: 1-10",
+            "20": "Several: 10-30",
+            "40": "Many: 40-60",
+            "60": "A Lot: 60-80",
+            "80": "Full Hopper: >80"
           }
         },
         {
@@ -621,23 +621,6 @@
       "name": "Endgame Scoring",
       "fields": [
         {
-          "title": "Fuel Missed",
-          "description": "The number of Fuel shot at the Hub that missed during the Transition Shift of TeleOp.",
-          "type": "select",
-          "required": false,
-          "code": "TeleEndgameMissed",
-          "formResetBehavior": "reset",
-          "defaultValue": "",
-          "choices": {
-            "0": "None: 0",
-            "5": "A few: 1-10",
-            "20": "Several: 10-30",
-            "40": "Many: 40-60",
-            "60": "A Lot: 60-80",
-            "80": "Full Hopper: >80"
-          }
-        },
-        {
           "title": "Estimate Fuel Scored",
           "description": "Estimate the Total Fuel Scored during endgame.",
           "type": "select",
@@ -652,6 +635,23 @@
             "55": "40-70 Scored",
             "85": "70-100 Scored",
             "100": ">100 Scored"
+          }
+        },
+        {
+          "title": "Fuel Missed",
+          "description": "The number of Fuel shot at the Hub that missed during the Transition Shift of TeleOp.",
+          "type": "select",
+          "required": false,
+          "code": "TeleEndgameMissed",
+          "formResetBehavior": "reset",
+          "defaultValue": "",
+          "choices": {
+            "0": "None: 0",
+            "5": "A few: 1-10",
+            "20": "Several: 10-30",
+            "40": "Many: 40-60",
+            "60": "A Lot: 60-80",
+            "80": "Full Hopper: >80"
           }
         },
         {
