@@ -79,7 +79,9 @@
           "formResetBehavior": "preserve",
           "defaultValue": "",
           "choices": {
-            "NoMythic": "NoMythic"
+            "NoMythic": "2491 - NoMythic",
+            "The Robettes": "2177 - The Robettes",
+            "Talon Robotics" :"2502 - Talon Robotics"
           }
         },
         {
