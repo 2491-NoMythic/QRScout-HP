@@ -59,11 +59,11 @@
   },
   "sections": [
     {
-      "name": "Prematch-1",
+      "name": "Match Details",
       "fields": [
         {
           "title": "Scouter Name",
-          "description": "Enter the name of the scouter.",
+          "description": "The name of the scouter.",
           "type": "text",
           "required": true,
           "code": "scouter",
@@ -71,50 +71,48 @@
           "defaultValue": ""
         },
         {
-          "title": "Team of Scouter",
-          "description": "Enter the team of the scouter.",
+          "title": "Alliance Scouted",
+          "description": "The Color of the alliance you are scouting.",
           "type": "select",
           "required": true,
-          "code": "scouter team",
+          "code": "teamNumber",
           "formResetBehavior": "preserve",
           "defaultValue": "",
           "choices": {
-            "NoMythic": "2491 - NoMythic",
-            "The Robettes": "2177 - The Robettes",
-            "Talon Robotics": "2502 - Talon Robotics"
+            "BLUE": "Blue Alliance",
+            "RED": "Red Alliance"
           }
         },
         {
           "title": "Type of Match",
-          "description": "Enter the type of match it is",
+          "description": "The type of match being played.",
           "type": "select",
           "required": true,
           "code": "MatchType",
-          "formResetBehavior": "preserve",
+          "formResetBehavior": "reset",
           "defaultValue": "",
           "choices": {
             "Practice": "Practice",
-            "Qualifications": "Qualification"
+            "Qualifications": "Qualifications"
           }
         },
         {
           "title": "Match Number",
-          "description": "Enter the match number. Automatically goes up every game.",
+          "description": "The match number of the match being played.",
           "type": "number",
           "required": true,
           "code": "matchNumber",
-          "formResetBehavior": "increment",
-          "defaultValue": 1,
-          "min": 1
+          "formResetBehavior": "reset",
+          "defaultValue": 0
         }
       ]
     },
     {
-      "name": "Prematch-2",
+      "name": "Team 1 Human player preformance",
       "fields": [
         {
           "title": "Team Number",
-          "description": "The team number of the robot you're scouting.",
+          "description": "The team number of Human player 1.",
           "type": "select",
           "required": true,
           "code": "teamNumber",
@@ -167,583 +165,331 @@
           }
         },
         {
-          "title": "Driver Station",
-          "description": "The robot you are scouting this match, based on driver station position.",
-          "type": "select",
-          "required": true,
-          "code": "robot",
-          "formResetBehavior": "preserve",
-          "defaultValue": "R1",
-          "choices": {
-            "R1": "Red 1",
-            "R2": "Red 2",
-            "R3": "Red 3",
-            "B1": "Blue 1",
-            "B2": "Blue 2",
-            "B3": "Blue 3"
-          }
-        },
-        {
-          "title": "Robot Present",
-          "description": "Check if the robot showed up for the match.",
-          "type": "boolean",
-          "required": false,
-          "code": "noShow",
-          "formResetBehavior": "reset",
-          "defaultValue": true
-        },
-        {
-          "title": "Starting Position",
-          "description": "The starting position of the robot you are scouting this match.",
-          "type": "select",
-          "required": true,
-          "code": "start",
-          "formResetBehavior": "preserve",
-          "defaultValue": "",
-          "choices": {
-            "Hub": "Hub",
-            "Bump": "Bump",
-            "Trench": "Trench"
-          }
-        },
-        {
-          "title": "Preloaded Fuel",
-          "description": "The number fuel preloaded in the robot.",
+          "title": "Fuel Scored Auto",
+          "description": "The number of fuel scored in the hub by HP during autonomus.",
           "type": "counter",
           "required": false,
           "code": "Auto",
           "formResetBehavior": "reset",
-          "defaultValue": 8,
+          "defaultValue": 0,
           "min": 0,
-          "max": 8,
           "step": 1
-        }
-      ]
-    },
-    {
-      "name": "Auto-1",
-      "fields": [
+        },
         {
-          "title": "Fuel Missed (Auto)",
-          "description": "How many fuel did the robot miss during auto?",
+          "title": "Fuel Missed Auto",
+          "description": "The number of fuel missed by HP during autonomus.",
           "type": "counter",
           "required": false,
-          "code": "MissedFuelAuto",
+          "code": "Auto",
           "formResetBehavior": "reset",
           "defaultValue": 0,
           "min": 0,
           "step": 1
         },
         {
-          "title": "Fuel Left in Robot (Auto)",
-          "description": "Estimate how many fuel are left in robot at the end of Auto.",
-          "type": "select",
-          "required": false,
-          "code": "AutoFuelLeftRobot",
-          "formResetBehavior": "reset",
-          "defaultValue": "0",
-          "choices": {
-            "0": "None: 0",
-            "8": "Preloads: 8",
-            "20": "Some: 10-30",
-            "40": "Many: 30-50",
-            "50": "Lots: >50"
-          }
-        },
-        {
-          "title": "Pick Up Location (Auto)",
-          "description": "Where did the robot pick up fuel from during Auto?",
-          "type": "multi-select",
-          "required": false,
-          "code": "AutoPickupLocations",
-          "formResetBehavior": "reset",
-          "choices": {
-            "Depot": "Depot",
-            "Outpost": "Outpost",
-            "Neutral": "Neutral Zone"
-          }
-        },
-        {
-          "title": "Fuel Left in Depot",
-          "description": "How much fuel was left in the depot if the robot's auto picked up from there?",
+          "title": "Fuel Scored",
+          "description": "The number of fuel scored in the hub by HP.",
           "type": "counter",
           "required": false,
-          "code": "AutoFuelLeftDepot",
+          "code": "Auto",
           "formResetBehavior": "reset",
-          "defaultValue": 24,
+          "defaultValue": 0,
           "min": 0,
-          "max": 24,
           "step": 1
         },
         {
-          "title": "Fuel Left in Outpost",
-          "description": "How much fuel was left in the outpost if the robot's auto picked up from there?",
+          "title": "Fuel Missed",
+          "description": "The number of fuel missed by HP.",
           "type": "counter",
           "required": false,
-          "code": "AutoFuelLeftOutpost",
+          "code": "Auto",
           "formResetBehavior": "reset",
-          "defaultValue": 24,
+          "defaultValue": 0,
           "min": 0,
-          "max": 24,
           "step": 1
-        }
-      ]
-    },
-    {
-      "name": "Auto-2",
-      "fields": [
-        {
-          "title": "Neutral Zone Entered",
-          "description": "How did the robot enter the neutral zone during Auto?",
-          "type": "multi-select",
-          "required": false,
-          "code": "AutoNeutralEntry",
-          "formResetBehavior": "reset",
-          "choices": {
-            "Bump": "Via Bump",
-            "Trench": "Via Trench"
-          }
         },
         {
-          "title": "Center Line Crossed",
-          "description": "Did the robot cross the center line during Auto?",
-          "type": "select",
-          "required": false,
-          "code": "CenterLineAuto",
-          "formResetBehavior": "reset",
-          "defaultValue": "",
-          "choices": {
-            "No": "No",
-            "Partially": "Partially",
-            "Fully": "Fully"
-          }
-        },
-        {
-          "title": "Climbed (Auto)",
-          "description": "Did the robot climb during Auto?",
-          "type": "select",
-          "required": false,
-          "code": "ClimbAuto",
-          "formResetBehavior": "reset",
-          "defaultValue": "",
-          "choices": {
-            "No": "No",
-            "Fail": "Tried and Failed",
-            "Yes": "Yes"
-          }
-        },
-        {
-          "title": "Comments (Auto)",
-          "description": "Comments about Auto?",
+          "title": "Notes",
+          "description": "Note ideas include: What do they play defense on? How effectively do they play it? How did they cause penalties?",
           "type": "text",
           "required": false,
-          "code": "AutoComments",
-          "formResetBehavior": "reset",
-          "defaultValue": ""
-        }
-      ]
-    },
-    {
-      "name": "Teleop-General 1",
-      "fields": [
-        {
-          "title": "Declimbed from Auto Climb",
-          "description": "Did the robot successfully declimb after auto?",
-          "type": "boolean",
-          "required": false,
-          "code": "StuckClimbTele",
-          "formResetBehavior": "reset",
-          "defaultValue": true
-        }
-      ]
-    },
-    {
-      "name": "Teleop-General 2",
-      "fields": [
-        {
-          "title": "Defense Type",
-          "description": "Did the robot engage in any types of defense? Disruption: using the robot against the opposing alliance to disrupt or limit their ability to score. Fuel stealing: picking up fuel on the ground of the opposing alliance zone. Blocking Trenches: using the robot to limit movement via the trenches. Blocking bumps: using the robot to limit movement via the bumps.",
-          "type": "multi-select",
-          "required": false,
-          "code": "DefenseTypeTele",
-          "formResetBehavior": "reset",
-          "choices": {
-            "Disruption": "Disrupting Shots",
-            "Fuel stealing": "Fuel Stealing",
-            "Blocking Trenches": "Blocking Trenches",
-            "Blocking Bumps": "Blocking Bumps",
-            "Blocking Shots": "Blocking Shots"
-          }
-        },
-        {
-          "title": "Defense Skill",
-          "description": "-10: Actively detrimental (many penalties) ------------------------------------ 0: Neither beneficial nor harmful ---------------------------------------------- 10: Minorly disrupts multiple robots/moderately hampers one robot ------- 20: Moderately disrupts multiple robots/severely hampers one robot ------ 30: Severely disrupts multiple robots/entirely shuts down one robot",
-          "type": "range",
-          "required": false,
-          "code": "DefenseSkillTele",
-          "formResetBehavior": "reset",
-          "defaultValue": 0,
-          "min": -10,
-          "max": 30,
-          "step": 1
-        }
-      ]
-    },
-    {
-      "name": "Teleop-General 3",
-      "fields": [
-        {
-          "title": "Passing",
-          "description": "Did the robot pass any fuel from one zone to another? If so, which zones.",
-          "type": "multi-select",
-          "required": false,
-          "code": "PassingTele",
-          "formResetBehavior": "reset",
-          "choices": {
-            "None": "No passing",
-            "Neutral-Alliance": "Neutral Zone to Alliance Zone",
-            "Oppo-Neutral": "Opponent Zone to Neutral Zone",
-            "Oppo-Alliance": "Opponent Zone to Alliance Zone"
-          }
-        },
-        {
-          "title": "Estimate Fuel Passed",
-          "description": "Estimate the Total Fuel Passeded in TeleOp.",
-          "type": "select",
-          "required": false,
-          "code": "TelePassedAmount",
+          "code": "co",
           "formResetBehavior": "reset",
           "defaultValue": "",
-          "choices": {
-            "0": "0 Passed",
-            "5": "1-10 Passed",
-            "25": "10-40 Passed",
-            "55": "40-70 Passed",
-            "85": "70-100 Passed",
-            "150": "100-200 Passed",
-            "250": "200-300 Passed",
-            "350": "300-400 Passed",
-            "400": ">400 Passed"
-          }
+          "min": 0,
+          "max": 1000
         },
         {
-          "title": "Bump and/or Trench",
-          "description": "Did the robot move over the bump or under the trench?",
-          "type": "multi-select",
-          "required": false,
-          "code": "BumpOrTrenchTele",
-          "formResetBehavior": "reset",
-          "choices": {
-            "Bump": "Bump",
-            "Trench": "Trench"
-          }
-        }
-      ]
-    },
-    {
-      "name": "Teleop-General 4",
-      "fields": [
-        {
-          "title": "Fuel Pickup Locations",
-          "description": "The locations the robot was able to pick up fuel from during teleop.",
-          "type": "multi-select",
-          "required": false,
-          "code": "FuelPickupTele",
-          "formResetBehavior": "reset",
-          "choices": {
-            "Depot": "Depot",
-            "Outpost": "Outpost",
-            "Neutral": "Neutral Zone"
-          }
-        },
-        {
-          "title": "Defended against?",
-          "description": "Was the robot defended against during the match?",
+          "title": "Multiple Drive team members throwing fuel?",
+          "description": "Were multiple members of the drive team of one team throwing fuel in the hub at any point during the match?",
           "type": "boolean",
           "required": false,
-          "code": "DefendedAgainst",
+          "code": "noShow",
           "formResetBehavior": "reset",
           "defaultValue": false
         }
       ]
     },
     {
-      "name": "Transition Shift",
+      "name": "Team 2 Human player preformance",
       "fields": [
         {
-          "title": "Estimate Fuel Scored",
-          "description": "Estimate the Total Fuel Scored in the Transition Shift of TeleOp.",
-          "type": "select",
-          "required": false,
-          "code": "TeleTransitionScored",
-          "formResetBehavior": "reset",
-          "defaultValue": "",
-          "choices": {
-            "0": "0 Scored",
-            "5": "1-10 Scored",
-            "25": "10-40 Scored",
-            "55": "40-70 Scored",
-            "85": "70-100 Scored",
-            "100": ">100 Scored"
-          }
-        },
-        {
-          "title": "Fuel Missed",
-          "description": "The number of Fuel shot at the Hub that missed during the Transition Shift of TeleOp.",
-          "type": "select",
-          "required": false,
-          "code": "TeleTransitionMissed",
-          "formResetBehavior": "reset",
-          "defaultValue": "",
-          "choices": {
-            "0": "None: 0",
-            "5": "A few: 1-10",
-            "20": "Several: 10-30",
-            "40": "Many: 40-60",
-            "60": "A Lot: 60-80",
-            "80": "Full Hopper: >80"
-          }
-        },
-        {
-          "title": "Shooting Cycles",
-          "description": "The number of shooting cycles during Transition Shift of TeleOp.",
-          "type": "counter",
-          "required": false,
-          "code": "TeleTransitionCycles",
-          "formResetBehavior": "reset",
-          "defaultValue": 0,
-          "min": 0,
-          "step": 1
-        }
-      ]
-    },
-    {
-      "name": "1st Scoring Shift",
-      "fields": [
-        {
-          "title": "Estimate Fuel Scored",
-          "description": "Estimate the Total Fuel Scored in the 1st Scoring Shift of TeleOp.",
-          "type": "select",
-          "required": false,
-          "code": "Tele1stShiftScored",
-          "formResetBehavior": "reset",
-          "defaultValue": "",
-          "choices": {
-            "0": "0 Scored",
-            "5": "1-10 Scored",
-            "25": "10-40 Scored",
-            "55": "40-70 Scored",
-            "85": "70-100 Scored",
-            "100": ">100 Scored"
-          }
-        },
-        {
-          "title": "Fuel Missed",
-          "description": "The number of Fuel shot at the Hub that missed during the Transition Shift of TeleOp.",
-          "type": "select",
-          "required": false,
-          "code": "Tele1stShiftMissed",
-          "formResetBehavior": "reset",
-          "defaultValue": "",
-          "choices": {
-            "0": "None: 0",
-            "5": "A few: 1-10",
-            "20": "Several: 10-30",
-            "40": "Many: 40-60",
-            "60": "A Lot: 60-80",
-            "80": "Full Hopper: >80"
-          }
-        },
-        {
-          "title": "Shooting Cycles",
-          "description": "The number of shooting cycles during Tran1st Scoring Shift of TeleOp.",
-          "type": "counter",
-          "required": false,
-          "code": "Tele1stShiftCycles",
-          "formResetBehavior": "reset",
-          "defaultValue": 0,
-          "min": 0,
-          "step": 1
-        }
-      ]
-    },
-    {
-      "name": "2nd Scoring Shift",
-      "fields": [
-        {
-          "title": "Estimate Fuel Scored",
-          "description": "Estimate the Total Fuel Scored in the 2nd Scoring Shift of TeleOp.",
-          "type": "select",
-          "required": false,
-          "code": "Tele2ndShiftScored",
-          "formResetBehavior": "reset",
-          "defaultValue": "",
-          "choices": {
-            "0": "0 Scored",
-            "5": "1-10 Scored",
-            "25": "10-40 Scored",
-            "55": "40-70 Scored",
-            "85": "70-100 Scored",
-            "100": ">100 Scored"
-          }
-        },
-        {
-          "title": "Fuel Missed",
-          "description": "The number of Fuel shot at the Hub that missed during the Transition Shift of TeleOp.",
-          "type": "select",
-          "required": false,
-          "code": "Tele2ndShiftMissed",
-          "formResetBehavior": "reset",
-          "defaultValue": "",
-          "choices": {
-            "0": "None: 0",
-            "5": "A few: 1-10",
-            "20": "Several: 10-30",
-            "40": "Many: 40-60",
-            "60": "A Lot: 60-80",
-            "80": "Full Hopper: >80"
-          }
-        },
-        {
-          "title": "Shooting Cycles",
-          "description": "The number of shooting cycles during 2nd Scoring Shift of TeleOp.",
-          "type": "counter",
-          "required": false,
-          "code": "Tele2ndShiftCycles",
-          "formResetBehavior": "reset",
-          "defaultValue": 0,
-          "min": 0,
-          "step": 1
-        }
-      ]
-    },
-    {
-      "name": "Endgame Scoring",
-      "fields": [
-        {
-          "title": "Estimate Fuel Scored",
-          "description": "Estimate the Total Fuel Scored during endgame.",
-          "type": "select",
-          "required": false,
-          "code": "TeleEndgameScored",
-          "formResetBehavior": "reset",
-          "defaultValue": "",
-          "choices": {
-            "0": "0 Scored",
-            "5": "1-10 Scored",
-            "25": "10-40 Scored",
-            "55": "40-70 Scored",
-            "85": "70-100 Scored",
-            "100": ">100 Scored"
-          }
-        },
-        {
-          "title": "Fuel Missed",
-          "description": "The number of Fuel shot at the Hub that missed during the Transition Shift of TeleOp.",
-          "type": "select",
-          "required": false,
-          "code": "TeleEndgameMissed",
-          "formResetBehavior": "reset",
-          "defaultValue": "",
-          "choices": {
-            "0": "None: 0",
-            "5": "A few: 1-10",
-            "20": "Several: 10-30",
-            "40": "Many: 40-60",
-            "60": "A Lot: 60-80",
-            "80": "Full Hopper: >80"
-          }
-        },
-        {
-          "title": "Shooting Cycles",
-          "description": "The number of shooting cycles during Endgame.",
-          "type": "counter",
-          "required": false,
-          "code": "TeleEndgameCycles",
-          "formResetBehavior": "reset",
-          "defaultValue": 0,
-          "min": 0,
-          "step": 1
-        }
-      ]
-    },
-    {
-      "name": "Endgame",
-      "fields": [
-        {
-          "title": "Endgame Climb",
+          "title": "Team Number",
+          "description": "The team number of Human player 2.",
           "type": "select",
           "required": true,
-          "code": "EndClimb",
+          "code": "teamNumber",
           "formResetBehavior": "reset",
-          "defaultValue": "None",
+          "defaultValue": "",
           "choices": {
-            "None": "No Climb",
-            "L1": "L1 Climb",
-            "L2": "L2 Climb",
-            "L3": "L3 Climb",
-            "Failed": "Attempted and Failed"
+            "1622": "1622 - Team Spyder",
+            "2052": "2052 - KnightKrawler",
+            "2129": "2129 - Ultraviolet",
+            "2169": "2169 - KING TeC",
+            "2177": "2177 - The Robettes",
+            "2227": "2227 - Tigers",
+            "2239": "2239 - Technocrats",
+            "2472": "2472 - Centurions",
+            "2491": "2491 - NoMythic",
+            "2502": "2502 - Talon Robotics",
+            "2512": "2512 - Duluth East Daredevils",
+            "2574": "2574 - RoboHuskie",
+            "2855": "2855 - BEASTBOT",
+            "3008": "3008 - Team Magma",
+            "3054": "3054 - IceStorm",
+            "3102": "3102 - Tech-No-Tigers",
+            "3212": "3212 - YME Stingbots",
+            "3298": "3298 - ArrowBots",
+            "3610": "3610 - Islanders",
+            "4181": "4181 - Quack Attack",
+            "4226": "4226 - Huskies",
+            "4230": "4230 - TopperBots",
+            "4623": "4623 - Flyer Robotics",
+            "4687": "4687 - Spartobots",
+            "5232": "5232 - Talons",
+            "5253": "5253 - Bigfork Backwoods Bots",
+            "5275": "5275 - T.I.M.E.-Bots",
+            "5278": "5278 - Los Clasicos",
+            "5348": "5348 - Charger Robotics",
+            "5720": "5720 - Jagobotics",
+            "5913": "5913 - Patriotics",
+            "6045": "6045 - Sabre Robotics",
+            "6047": "6047 - Proctor Frostbyte",
+            "6132": "6132 - Iron Rangers",
+            "6647": "6647 - PrepaTec - VOLTEC",
+            "6758": "6758 - Otternauts",
+            "6907": "6907 - The G.O.A.T",
+            "7041": "7041 - Doomsday Dogs",
+            "8122": "8122 - Mechanical Mustaches",
+            "9532": "9532 - Messy Bees",
+            "10474": "10474 - Aitkin High School",
+            "10711": "10711 - FORMSHOP",
+            "11292": "11292 - Icebots 2"
           }
         },
         {
-          "title": "Endgame Comments",
+          "title": "Fuel Scored Auto",
+          "description": "The number of fuel scored in the hub by HP during autonomus.",
+          "type": "counter",
+          "required": false,
+          "code": "Auto",
+          "formResetBehavior": "reset",
+          "defaultValue": 0,
+          "min": 0,
+          "step": 1
+        },
+        {
+          "title": "Fuel Missed Auto",
+          "description": "The number of fuel missed by HP during autonomus.",
+          "type": "counter",
+          "required": false,
+          "code": "Auto",
+          "formResetBehavior": "reset",
+          "defaultValue": 0,
+          "min": 0,
+          "step": 1
+        },
+        {
+          "title": "Fuel Scored",
+          "description": "The number of fuel scored in the hub by HP.",
+          "type": "counter",
+          "required": false,
+          "code": "Auto",
+          "formResetBehavior": "reset",
+          "defaultValue": 0,
+          "min": 0,
+          "step": 1
+        },
+        {
+          "title": "Fuel Missed",
+          "description": "The number of fuel missed by HP.",
+          "type": "counter",
+          "required": false,
+          "code": "Auto",
+          "formResetBehavior": "reset",
+          "defaultValue": 0,
+          "min": 0,
+          "step": 1
+        },
+        {
+          "title": "Notes",
+          "description": "Note ideas include: What do they play defense on? How effectively do they play it? How did they cause penalties?",
           "type": "text",
           "required": false,
-          "code": "endco",
+          "code": "co",
           "formResetBehavior": "reset",
           "defaultValue": "",
           "min": 0,
-          "max": 100
+          "max": 1000
+        },
+        {
+          "title": "Multiple Drive team members throwing fuel?",
+          "description": "Were multiple members of the drive team of one team throwing fuel in the hub at any point during the match?",
+          "type": "boolean",
+          "required": false,
+          "code": "noShow",
+          "formResetBehavior": "reset",
+          "defaultValue": false
         }
       ]
     },
     {
-      "name": "Postmatch-1",
+      "name": "Team 3 Human player preformance",
       "fields": [
         {
-          "title": "Cards",
-          "description": "Did the Robot get any cards?",
+          "title": "Team Number",
+          "description": "The team number of Human player 3.",
           "type": "select",
-          "required": false,
-          "code": "Cards",
+          "required": true,
+          "code": "teamNumber",
           "formResetBehavior": "reset",
-          "defaultValue": "None",
+          "defaultValue": "",
           "choices": {
-            "None": "No Cards",
-            "Yellow": "Yellow Card",
-            "Red": "Red Card"
+            "1622": "1622 - Team Spyder",
+            "2052": "2052 - KnightKrawler",
+            "2129": "2129 - Ultraviolet",
+            "2169": "2169 - KING TeC",
+            "2177": "2177 - The Robettes",
+            "2227": "2227 - Tigers",
+            "2239": "2239 - Technocrats",
+            "2472": "2472 - Centurions",
+            "2491": "2491 - NoMythic",
+            "2502": "2502 - Talon Robotics",
+            "2512": "2512 - Duluth East Daredevils",
+            "2574": "2574 - RoboHuskie",
+            "2855": "2855 - BEASTBOT",
+            "3008": "3008 - Team Magma",
+            "3054": "3054 - IceStorm",
+            "3102": "3102 - Tech-No-Tigers",
+            "3212": "3212 - YME Stingbots",
+            "3298": "3298 - ArrowBots",
+            "3610": "3610 - Islanders",
+            "4181": "4181 - Quack Attack",
+            "4226": "4226 - Huskies",
+            "4230": "4230 - TopperBots",
+            "4623": "4623 - Flyer Robotics",
+            "4687": "4687 - Spartobots",
+            "5232": "5232 - Talons",
+            "5253": "5253 - Bigfork Backwoods Bots",
+            "5275": "5275 - T.I.M.E.-Bots",
+            "5278": "5278 - Los Clasicos",
+            "5348": "5348 - Charger Robotics",
+            "5720": "5720 - Jagobotics",
+            "5913": "5913 - Patriotics",
+            "6045": "6045 - Sabre Robotics",
+            "6047": "6047 - Proctor Frostbyte",
+            "6132": "6132 - Iron Rangers",
+            "6647": "6647 - PrepaTec - VOLTEC",
+            "6758": "6758 - Otternauts",
+            "6907": "6907 - The G.O.A.T",
+            "7041": "7041 - Doomsday Dogs",
+            "8122": "8122 - Mechanical Mustaches",
+            "9532": "9532 - Messy Bees",
+            "10474": "10474 - Aitkin High School",
+            "10711": "10711 - FORMSHOP",
+            "11292": "11292 - Icebots 2"
           }
         },
         {
-          "title": "Comments",
-          "description": "Any additional information?",
+          "title": "Fuel Scored Auto",
+          "description": "The number of fuel scored in the hub by HP during autonomus.",
+          "type": "counter",
+          "required": false,
+          "code": "Auto",
+          "formResetBehavior": "reset",
+          "defaultValue": 0,
+          "min": 0,
+          "step": 1
+        },
+        {
+          "title": "Fuel Missed Auto",
+          "description": "The number of fuel missed by HP during autonomus.",
+          "type": "counter",
+          "required": false,
+          "code": "Auto",
+          "formResetBehavior": "reset",
+          "defaultValue": 0,
+          "min": 0,
+          "step": 1
+        },
+        {
+          "title": "Fuel Scored",
+          "description": "The number of fuel scored in the hub by HP.",
+          "type": "counter",
+          "required": false,
+          "code": "Auto",
+          "formResetBehavior": "reset",
+          "defaultValue": 0,
+          "min": 0,
+          "step": 1
+        },
+        {
+          "title": "Fuel Missed",
+          "description": "The number of fuel missed by HP.",
+          "type": "counter",
+          "required": false,
+          "code": "Auto",
+          "formResetBehavior": "reset",
+          "defaultValue": 0,
+          "min": 0,
+          "step": 1
+        },
+        {
+          "title": "Notes",
+          "description": "Note ideas include: What do they play defense on? How effectively do they play it? How did they cause penalties?",
           "type": "text",
           "required": false,
-          "code": "PostComments",
+          "code": "co",
           "formResetBehavior": "reset",
-          "defaultValue": ""
+          "defaultValue": "",
+          "min": 0,
+          "max": 1000
+        },
+        {
+          "title": "Multiple Drive team members throwing fuel?",
+          "description": "Were multiple members of the drive team of one team throwing fuel in the hub at any point during the match?",
+          "type": "boolean",
+          "required": false,
+          "code": "noShow",
+          "formResetBehavior": "reset",
+          "defaultValue": false
         }
       ]
     },
     {
-      "name": "Postmatch-2",
+      "name": "Extra",
       "fields": [
         {
-          "title": "Major Mechanism Broke",
-          "description": "Did one of the robot's major mechanism break?",
-          "type": "boolean",
-          "required": false,
-          "code": "broken",
-          "formResetBehavior": "reset",
-          "defaultValue": false
-        },
-        {
-          "title": "Robot Disabled? (Solid Orange Light)",
-          "type": "boolean",
-          "required": false,
-          "code": "dto",
-          "formResetBehavior": "reset",
-          "defaultValue": false
+          "title": "Version ID",
+          "description": "To check which version of the form this is.",
+          "type": "select",
+          "required": true,
+          "code": "VersionID",
+          "formResetBehavior": "preserve",
+          "defaultValue": "5",
+          "choices": {
+            "5": "5"
+          }
         }
       ]
     }
