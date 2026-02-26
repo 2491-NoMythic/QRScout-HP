@@ -89,7 +89,7 @@
          "type": "select",
          "required": true,
          "code": "MatchType",
-         "formResetBehavior": "reset",
+         "formResetBehavior": "preserve",
          "defaultValue": "",
          "choices": {
            "Practice": "Practice",
@@ -102,8 +102,8 @@
          "type": "number",
          "required": true,
          "code": "matchNumber",
-         "formResetBehavior": "reset",
-         "defaultValue": 0
+         "formResetBehavior": "increment",
+         "defaultValue": 1
        }
      ]
    },
@@ -496,7 +496,18 @@
          "code": "TeleopFuel",
          "formResetBehavior": "reset",
          "defaultValue": 0
-       }
+       },
+       {
+        "title": "Version ID",
+          "description": "To check which version of the form this is.",
+          "type": "select",
+          "required": true,
+          "code": "VersionID",
+          "formResetBehavior": "preserve",
+          "defaultValue": "22626",
+          "choices": {
+            "0": "22626"
+          }}
      ]
    }
  ]
