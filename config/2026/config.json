@@ -507,9 +507,9 @@
           "required": true,
           "code": "VersionID",
           "formResetBehavior": "preserve",
-          "defaultValue": "0",
+          "defaultValue": "3/5/26.2",
           "choices": {
-            "0": "3/5/26.2"
+            "3/5/26.2": "3/5/26.2"
           }
         }
       ]
