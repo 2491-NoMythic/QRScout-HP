@@ -128,6 +128,7 @@
             "2239": "2239 - Technocrats",
             "2472": "2472 - Centurions",
             "2491": "2491 - NoMythic",
+            "2500": "2500 - Herobotics",
             "2502": "2502 - Talon Robotics",
             "2512": "2512 - Duluth East Daredevils",
             "2574": "2574 - RoboHuskie",
@@ -159,7 +160,7 @@
             "7041": "7041 - Doomsday Dogs",
             "8122": "8122 - Mechanical Mustaches",
             "9532": "9532 - Messy Bees",
-            "10474": "10474 - Aitkin High School",
+            "10474": "10474 - Turcia Machina",
             "10711": "10711 - FORMSHOP",
             "11292": "11292 - Icebots 2"
           }
@@ -251,6 +252,7 @@
             "2239": "2239 - Technocrats",
             "2472": "2472 - Centurions",
             "2491": "2491 - NoMythic",
+            "2500": "2500 - Herobotics",
             "2502": "2502 - Talon Robotics",
             "2512": "2512 - Duluth East Daredevils",
             "2574": "2574 - RoboHuskie",
@@ -282,7 +284,7 @@
             "7041": "7041 - Doomsday Dogs",
             "8122": "8122 - Mechanical Mustaches",
             "9532": "9532 - Messy Bees",
-            "10474": "10474 - Aitkin High School",
+            "10474": "10474 - Turcia Machina",
             "10711": "10711 - FORMSHOP",
             "11292": "11292 - Icebots 2"
           }
@@ -374,6 +376,7 @@
             "2239": "2239 - Technocrats",
             "2472": "2472 - Centurions",
             "2491": "2491 - NoMythic",
+            "2500": "2500 - Herobotics",
             "2502": "2502 - Talon Robotics",
             "2512": "2512 - Duluth East Daredevils",
             "2574": "2574 - RoboHuskie",
@@ -405,7 +408,7 @@
             "7041": "7041 - Doomsday Dogs",
             "8122": "8122 - Mechanical Mustaches",
             "9532": "9532 - Messy Bees",
-            "10474": "10474 - Aitkin High School",
+            "10474": "10474 - Turcia Machina",
             "10711": "10711 - FORMSHOP",
             "11292": "11292 - Icebots 2"
           }
@@ -504,9 +507,9 @@
           "required": true,
           "code": "VersionID",
           "formResetBehavior": "preserve",
-          "defaultValue": "2/28/26.1",
+          "defaultValue": "0",
           "choices": {
-            "0": "2/28/26.1"
+            "0": "3/5/26.1"
           }
         }
       ]
