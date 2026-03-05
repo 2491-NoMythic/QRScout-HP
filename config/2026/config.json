@@ -79,8 +79,8 @@
           "formResetBehavior": "preserve",
           "defaultValue": "",
           "choices": {
-            "BLUE": "Blue Alliance",
-            "RED": "Red Alliance"
+            "B": "Blue Alliance",
+            "R": "Red Alliance"
           }
         },
         {
@@ -509,7 +509,7 @@
           "formResetBehavior": "preserve",
           "defaultValue": "0",
           "choices": {
-            "0": "3/5/26.1"
+            "0": "3/5/26.2"
           }
         }
       ]
