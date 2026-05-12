@@ -1,369 +1,376 @@
 {
-  "title": "QRScout",
-  "page_title": "REBUILT",
-  "delimiter": "\t",
-  "teamNumber": 2491,
-  "theme": {
-    "light": {
-      "background": "0 0% 99%",
-      "foreground": "0 0% 3.9%",
-      "card": "0 0% 100%",
-      "card_foreground": "0 0% 3.9%",
-      "popover": "0 0% 100%",
-      "popover_foreground": "0 0% 3.9%",
-      "primary": "270 100% 60%",
-      "primary_foreground": "280 55.7% 97.3%",
-      "secondary": "0 0% 96.1%",
-      "secondary_foreground": "0 0% 9%",
-      "muted": "0 0% 96.1%",
-      "muted_foreground": "0 0% 45.1%",
-      "accent": "0 0% 96.1%",
-      "accent_foreground": "0 0% 9%",
-      "destructive": "0 100% 33.9%",
-      "destructive_foreground": "280 0% 98%",
-      "border": "0 0% 89.8%",
-      "input": "0 100% 33.9%",
-      "ring": "280 100% 30%",
-      "chart_1": "12 76% 61%",
-      "chart_2": "173 58% 39%",
-      "chart_3": "197 37% 24%",
-      "chart_4": "0 74% 66%",
-      "chart_5": "27 87% 67%"
-    },
-    "dark": {
-      "background": "0 0% 3.9%",
-      "foreground": "0 0% 98%",
-      "card": "0 0% 3.9%",
-      "card_foreground": "0 0% 98%",
-      "popover": "0 0% 3.9%",
-      "popover_foreground": "0 0% 98%",
-      "primary": "270 100% 80.2%",
-      "primary_foreground": "240 1.4% 13.9%",
-      "secondary": "0 0% 14.9%",
-      "secondary_foreground": "0 0% 98%",
-      "muted": "0 0% 14.9%",
-      "muted_foreground": "0 0% 63.9%",
-      "accent": "0 0% 14.9%",
-      "accent_foreground": "0 0% 98%",
-      "destructive": "0.6 96.4% 78.4%",
-      "destructive_foreground": "240 1.4% 13.9%",
-      "border": "0 0% 14.9%",
-      "input": "0.6 96.4% 78.4%",
-      "ring": "280 100% 30%",
-      "chart_1": "220 70% 50%",
-      "chart_2": "160 60% 45%",
-      "chart_3": "30 80% 55%",
-      "chart_4": "280 65% 60%",
-      "chart_5": "340 75% 55%"
-    }
-  },
-  "sections": [
-    {
-      "name": "Match Details",
-      "fields": [
-        {
-          "title": "Scouter Name",
-          "description": "The name of the scouter.",
-          "type": "text",
-          "required": true,
-          "code": "scouter",
-          "formResetBehavior": "preserve",
-          "defaultValue": ""
-        },
-        {
-          "title": "Alliance Scouted",
-          "description": "The Color of the alliance you are scouting.",
-          "type": "select",
-          "required": true,
-          "code": "teamNumber1",
-          "formResetBehavior": "preserve",
-          "defaultValue": "",
-          "choices": {
-            "B": "Blue Alliance",
-            "R": "Red Alliance"
-          }
-        },
-        {
-          "title": "Type of Match",
-          "description": "The type of match being played.",
-          "type": "select",
-          "required": true,
-          "code": "MatchType",
-          "formResetBehavior": "preserve",
-          "defaultValue": "",
-          "choices": {
-            "Practice": "Practice",
-            "Qualifications": "Qualifications"
-          }
-        },
-        {
-          "title": "Match Number",
-          "description": "The match number of the match being played.",
-          "type": "number",
-          "required": true,
-          "code": "matchNumber",
-          "formResetBehavior": "increment",
-          "defaultValue": 1
-        }
-      ]
-    },
-    {
-      "name": "Alliance Human player preformance",
-      "fields": [
-        {
-          "title": "Fuel Scored Auto",
-          "description": "The number of fuel scored in the hub by HP's during autonomus.",
-          "type": "counter",
-          "required": false,
-          "code": "Team1AutoScored",
-          "formResetBehavior": "reset",
-          "defaultValue": 0,
-          "min": 0,
-          "step": 1
-        },
-        {
-          "title": "Fuel Missed Auto",
-          "description": "The number of fuel missed by HP's during autonomus.",
-          "type": "counter",
-          "required": false,
-          "code": "Team1AutoMissed",
-          "formResetBehavior": "reset",
-          "defaultValue": 0,
-          "min": 0,
-          "step": 1
-        },
-        {
-          "title": "Notes",
-          "description": "Any additional information that is relevant.",
-          "type": "text",
-          "required": false,
-          "code": "Team3Notes",
-          "formResetBehavior": "reset",
-          "defaultValue": "",
-          "min": 0,
-          "max": 1000
-        }
-      ]
-    },
-    {
-      "name": "Extra",
-      "fields": [
-        {
-          "title": "Auto Fuel",
-          "description": "The amount of fuel scored in Auto according to the scoreboard",
-          "type": "number",
-          "required": true,
-          "code": "AutoFuel",
-          "formResetBehavior": "reset",
-          "defaultValue": 0
-        },
-        {
-          "title": "Teleop Fuel",
-          "description": "The amount of fuel scored in Teleop according to the scoreboard",
-          "type": "number",
-          "required": true,
-          "code": "TeleopFuel",
-          "formResetBehavior": "reset",
-          "defaultValue": 0
-        }
-      ]
-    },
-    {
-      "name": "Defense Type",
-      "fields": [
-        {
-          "title": "Team Number",
-          "description": "The team number of the robot you're scouting.",
-          "type": "select",
-          "required": false,
-          "code": "teamNumberD",
-          "formResetBehavior": "reset",
-          "defaultValue": "",
-          "choices": {
-            "2052": "2052 - KnightKrawler",
-            "2169": "2169 - KING TeC",
-            "2220": "2220 - Blue Twilight",
-            "2239": "2239 - Technocrats",
-            "2472": "2472 - Centurions",
-            "2480": "2480 - Iron Paws",
-            "2491": "2491 - NoMythic",
-            "2503": "2503 - Warrior Robotics",
-            "2530": "2530 - Inconceivable",
-            "2846": "2846 - FireBears",
-            "2847": "2847 - The MegaHertz",
-            "2883": "2883 - F.R.E.D (FIRST Robotics Engineering and Design)",
-            "3082": "3082 - Chicken Bot Pie",
-            "3100": "3100 - The Lightning Turtles",
-            "3130": "3130 - The ERRORs",
-            "3276": "3276 - TOOLCATS",
-            "3277": "3277 - ProDigi",
-            "3293": "3293 - OtterBots",
-            "3297": "3297 - Full Metal Jackets",
-            "3630": "3630 - Stampde",
-            "3926": "3926 - MPArors",
-            "4174": "4174 - Mustang Robotics",
-            "4607": "4607 - C.I.S.",
-            "4674": "4674 - RoboJacks",
-            "4728": "4728 - ROCORI Robotics",
-            "4741": "4741 - WingNuts",
-            "4778": "4778 - Stormbots",
-            "5348": "5348 - Charger Robotics",
-            "5653": "5653 - Iron Mosquitos",
-            "5913": "5913 - Patriotics",
-            "6045": "6045 - Sabre Robotics",
-            "7028": "7028 - Binary Battalion",
-            "7257": "7257 - Semiconductors",
-            "7797": "7797 - RipSaw Robotics",
-            "7858": "7858 - Warriors",
-            "11283": "11283 - Melrose Gear Grinders",
-            "00000": "00000 - Team not in list (Put Team # in comments)"
-          }
-        },
-        {
-          "title": "Estimate Shots Missed due to Shot Disruptions",
-          "description": "How many fuel did the robot being defended miss due to the shot disruption?",
-          "type": "select",
-          "required": false,
-          "code": "ShotsDisrupted",
-          "formResetBehavior": "reset",
-          "defaultValue": "",
-          "choices": {
-            "0": "0 Disrupted",
-            "5": "1-10 Disrupted",
-            "25": "10-40 Disrupted",
-            "55": "40-70 Disrupted",
-            "85": "70-100 Disrupted",
-            "150": "100-200 Disrupted",
-            "250": "200-300 Disrupted",
-            "350": "300-400 Disrupted",
-            "400": ">400 Disrupted"
-          }
-        },
-        {
-          "title": "Numeber of Times Disrupting Shots",
-          "description": "How many times did the robot disrupt shots?",
-          "type": "counter",
-          "required": false,
-          "code": "NumberDisruptingShots",
-          "formResetBehavior": "reset",
-          "defaultValue": 0,
-          "min": 0,
-          "step": 1
-        }
-      ]
-    },
-    {
-      "name": "Defense Type 2",
-      "fields": [
-        {
-          "title": "Are they/how did they Steal Fuel",
-          "description": "How did they steal fuel?",
-          "type": "multi-select",
-          "required": false,
-          "code": "FuelStealing",
-          "formResetBehavior": "reset",
-          "choices": {
-            "Passing NZ": "Passing to Neutral Zone",
-            "Passing AZ": "Passing to Alliance Zone",
-            "Shoveling": "Shoveling",
-            "Collecting": "Collecting"
-          }
-        },
-        {
-          "title": "Estimate how much Fuel they Stole",
-          "description": "How many fuel did the robot steal?",
-          "type": "select",
-          "required": false,
-          "code": "FuelStolen",
-          "formResetBehavior": "reset",
-          "defaultValue": "",
-          "choices": {
-            "0": "0 Stolen",
-            "5": "1-10 Stolen",
-            "25": "10-40 Stolen",
-            "55": "40-70 Stolen",
-            "85": "70-100 Stolen",
-            "150": "100-200 Stolen",
-            "250": "200-300 Stolen",
-            "350": "300-400 Stolen",
-            "400": ">400 Stolen"
-          }
-        },
-        {
-          "title": "Did they/how did they Play Zone",
-          "description": "How did they steal fuel?",
-          "type": "multi-select",
-          "required": false,
-          "code": "ZoneDefense",
-          "formResetBehavior": "reset",
-          "choices": {
-            "Bumps OZ": "Blocking bumps in the opponents zone",
-            "Trenches OZ": "Blocking trenches in the opponents zone",
-            "Both OZ": "Blocking bumps and trenches in the opponent zone",
-            "Bumps NZ": "Blocking bumps in the neutral zone",
-            "Trenches NZ": "Blocking trenches in the neutral zone",
-            "Both NZ": "Blocking bumps and trenches in the neutral zone"
-          }
-        }
-      ]
-    },
-    {
-      "name": "Defense Efficacy",
-      "fields": [
-        {
-          "title": "Defense Skill",
-          "description": "-10: Actively detrimental (many penalties) ------------------------------------ 0: Neither beneficial nor harmful ---------------------------------------------- 10: Minorly disrupts multiple robots/moderately hampers one robot ------- 20: Moderately disrupts multiple robots/severely hampers one robot ------ 30: Severely disrupts multiple robots/entirely shuts down one robot",
-          "type": "range",
-          "required": false,
-          "code": "DefenseSkill",
-          "formResetBehavior": "reset",
-          "defaultValue": 0,
-          "min": -10,
-          "max": 30,
-          "step": 1
-        },
-        {
-          "title": "Penalties",
-          "description": "How many penalties did they get playing defense?",
-          "type": "counter",
-          "required": false,
-          "code": "Penalties",
-          "formResetBehavior": "reset",
-          "defaultValue": 0,
-          "min": 0,
-          "step": 1
-        },
-        {
-          "title": "Endgame",
-          "description": "What did they do in endgame? Did they leave the zone? Did they get tower penalties?",
-          "type": "text",
-          "required": false,
-          "code": "Endgame1",
-          "formResetBehavior": "reset",
-          "defaultValue": ""
-        },
-        {
-          "title": "Comments",
-          "description": "Comments about defense",
-          "type": "text",
-          "required": false,
-          "code": "AutoComments",
-          "formResetBehavior": "reset",
-          "defaultValue": ""
-        },
-        {
-          "title": "Version ID",
-          "description": "To check which version of the form this is.",
-          "type": "select",
-          "required": true,
-          "code": "VersionID",
-          "formResetBehavior": "preserve",
-          "defaultValue": "0",
-          "choices": {
-            "0": "5/9/26.1"
-          }
-        }
-      ]
-    }
-  ]
+ "title": "QRScout",
+ "page_title": "REBUILT",
+ "delimiter": "\t",
+ "teamNumber": 2491,
+ "theme": {
+   "light": {
+     "background": "0 0% 99%",
+     "foreground": "0 0% 3.9%",
+     "card": "0 0% 100%",
+     "card_foreground": "0 0% 3.9%",
+     "popover": "0 0% 100%",
+     "popover_foreground": "0 0% 3.9%",
+     "primary": "270 100% 60%",
+     "primary_foreground": "280 55.7% 97.3%",
+     "secondary": "0 0% 96.1%",
+     "secondary_foreground": "0 0% 9%",
+     "muted": "0 0% 96.1%",
+     "muted_foreground": "0 0% 45.1%",
+     "accent": "0 0% 96.1%",
+     "accent_foreground": "0 0% 9%",
+     "destructive": "0 100% 33.9%",
+     "destructive_foreground": "280 0% 98%",
+     "border": "0 0% 89.8%",
+     "input": "0 100% 33.9%",
+     "ring": "280 100% 30%",
+     "chart_1": "12 76% 61%",
+     "chart_2": "173 58% 39%",
+     "chart_3": "197 37% 24%",
+     "chart_4": "0 74% 66%",
+     "chart_5": "27 87% 67%"
+   },
+   "dark": {
+     "background": "0 0% 3.9%",
+     "foreground": "0 0% 98%",
+     "card": "0 0% 3.9%",
+     "card_foreground": "0 0% 98%",
+     "popover": "0 0% 3.9%",
+     "popover_foreground": "0 0% 98%",
+     "primary": "270 100% 80.2%",
+     "primary_foreground": "240 1.4% 13.9%",
+     "secondary": "0 0% 14.9%",
+     "secondary_foreground": "0 0% 98%",
+     "muted": "0 0% 14.9%",
+     "muted_foreground": "0 0% 63.9%",
+     "accent": "0 0% 14.9%",
+     "accent_foreground": "0 0% 98%",
+     "destructive": "0.6 96.4% 78.4%",
+     "destructive_foreground": "240 1.4% 13.9%",
+     "border": "0 0% 14.9%",
+     "input": "0.6 96.4% 78.4%",
+     "ring": "280 100% 30%",
+     "chart_1": "220 70% 50%",
+     "chart_2": "160 60% 45%",
+     "chart_3": "30 80% 55%",
+     "chart_4": "280 65% 60%",
+     "chart_5": "340 75% 55%"
+   }
+ },
+ "sections": [
+   {
+     "name": "Match Details",
+     "fields": [
+       {
+         "title": "Scouter Name",
+         "description": "The name of the scouter.",
+         "type": "text",
+         "required": true,
+         "code": "scouter",
+         "formResetBehavior": "preserve",
+         "defaultValue": ""
+       },
+       {
+         "title": "Alliance Scouted",
+         "description": "The Color of the alliance you are scouting.",
+         "type": "select",
+         "required": true,
+         "code": "teamNumber1",
+         "formResetBehavior": "preserve",
+         "defaultValue": "",
+         "choices": {
+           "B": "Blue Alliance",
+           "R": "Red Alliance"
+         }
+       },
+       {
+         "title": "Type of Match",
+         "description": "The type of match being played.",
+         "type": "select",
+         "required": true,
+         "code": "MatchType",
+         "formResetBehavior": "preserve",
+         "defaultValue": "",
+         "choices": {
+           "Practice": "Practice",
+           "Qualifications": "Qualifications"
+         }
+       },
+       {
+         "title": "Match Number",
+         "description": "The match number of the match being played.",
+         "type": "number",
+         "required": true,
+         "code": "matchNumber",
+         "formResetBehavior": "increment",
+         "defaultValue": 1
+       }
+     ]
+   },
+   {
+     "name": "Alliance Human player preformance",
+     "fields": [
+       {
+         "title": "Fuel Scored Auto",
+         "description": "The number of fuel scored in the hub by HP's during autonomus.",
+         "type": "counter",
+         "required": false,
+         "code": "Team1AutoScored",
+         "formResetBehavior": "reset",
+         "defaultValue": 0,
+         "min": 0,
+         "step": 1
+       },
+       {
+         "title": "Dump?",
+         "description": "Did the human players dump?",
+         "type": "boolean",
+         "required": false,
+         "code": "Dump?",
+         "formResetBehavior": "reset",
+         "defaultValue": false
+       },
+       {
+         "title": "Fuel Missed Auto",
+         "description": "The number of fuel missed by HP's during autonomus.",
+         "type": "counter",
+         "required": false,
+         "code": "Team1AutoMissed",
+         "formResetBehavior": "reset",
+         "defaultValue": 0,
+         "min": 0,
+         "step": 1
+       },
+       {
+         "title": "Notes",
+         "description": "Any additional information that is relevant.",
+         "type": "text",
+         "required": false,
+         "code": "Team3Notes",
+         "formResetBehavior": "reset",
+         "defaultValue": "",
+         "min": 0,
+         "max": 1000
+       }
+     ]
+   },
+   {
+     "name": "Extra",
+     "fields": [
+       {
+         "title": "Auto Fuel",
+         "description": "The amount of fuel scored in Auto according to the scoreboard",
+         "type": "number",
+         "required": true,
+         "code": "AutoFuel",
+         "formResetBehavior": "reset",
+         "defaultValue": 0
+       },
+       {
+         "title": "Teleop Fuel",
+         "description": "The amount of fuel scored in Teleop according to the scoreboard",
+         "type": "number",
+         "required": true,
+         "code": "TeleopFuel",
+         "formResetBehavior": "reset",
+         "defaultValue": 0
+       }
+     ]
+   },
+   {
+     "name": "Defense Type",
+     "fields": [
+       {
+         "title": "Team Number",
+         "description": "The team number of the robot you're scouting.",
+         "type": "select",
+         "required": false,
+         "code": "teamNumberD",
+         "formResetBehavior": "reset",
+         "defaultValue": "",
+         "choices": {
+           "2052": "2052 - KnightKrawler",
+           "2169": "2169 - KING TeC",
+           "2220": "2220 - Blue Twilight",
+           "2239": "2239 - Technocrats",
+           "2472": "2472 - Centurions",
+           "2480": "2480 - Iron Paws",
+           "2491": "2491 - NoMythic",
+           "2503": "2503 - Warrior Robotics",
+           "2530": "2530 - Inconceivable",
+           "2846": "2846 - FireBears",
+           "2847": "2847 - The MegaHertz",
+           "2883": "2883 - F.R.E.D (FIRST Robotics Engineering and Design)",
+           "3082": "3082 - Chicken Bot Pie",
+           "3100": "3100 - The Lightning Turtles",
+           "3130": "3130 - The ERRORs",
+           "3276": "3276 - TOOLCATS",
+           "3277": "3277 - ProDigi",
+           "3293": "3293 - OtterBots",
+           "3297": "3297 - Full Metal Jackets",
+           "3630": "3630 - Stampde",
+           "3926": "3926 - MPArors",
+           "4174": "4174 - Mustang Robotics",
+           "4607": "4607 - C.I.S.",
+           "4674": "4674 - RoboJacks",
+           "4728": "4728 - ROCORI Robotics",
+           "4741": "4741 - WingNuts",
+           "4778": "4778 - Stormbots",
+           "5348": "5348 - Charger Robotics",
+           "5653": "5653 - Iron Mosquitos",
+           "5913": "5913 - Patriotics",
+           "6045": "6045 - Sabre Robotics",
+           "7028": "7028 - Binary Battalion",
+           "7257": "7257 - Semiconductors",
+           "7797": "7797 - RipSaw Robotics",
+           "7858": "7858 - Warriors",
+           "11283": "11283 - Melrose Gear Grinders",
+           "00000": "00000 - Team not in list (Put Team # in comments)"
+         }
+       },
+       {
+         "title": "Estimate Shots Missed due to Shot Disruptions",
+         "description": "How many fuel did the robot being defended miss due to the shot disruption?",
+         "type": "select",
+         "required": false,
+         "code": "ShotsDisrupted",
+         "formResetBehavior": "reset",
+         "defaultValue": "",
+         "choices": {
+           "0": "0 Disrupted",
+           "5": "1-10 Disrupted",
+           "25": "10-40 Disrupted",
+           "55": "40-70 Disrupted",
+           "85": "70-100 Disrupted",
+           "150": "100-200 Disrupted",
+           "250": "200-300 Disrupted",
+           "350": "300-400 Disrupted",
+           "400": ">400 Disrupted"
+         }
+       },
+       {
+         "title": "Numeber of Times Disrupting Shots",
+         "description": "How many times did the robot disrupt shots?",
+         "type": "counter",
+         "required": false,
+         "code": "NumberDisruptingShots",
+         "formResetBehavior": "reset",
+         "defaultValue": 0,
+         "min": 0,
+         "step": 1
+       }
+     ]
+   },
+   {
+     "name": "Defense Type 2",
+     "fields": [
+       {
+         "title": "Are they/how did they Steal Fuel",
+         "description": "How did they steal fuel?",
+         "type": "multi-select",
+         "required": false,
+         "code": "FuelStealing",
+         "formResetBehavior": "reset",
+         "choices": {
+           "Passing NZ": "Passing to Neutral Zone",
+           "Passing AZ": "Passing to Alliance Zone",
+           "Shoveling": "Shoveling",
+           "Collecting": "Collecting"
+         }
+       },
+       {
+         "title": "Estimate how much Fuel they Stole",
+         "description": "How many fuel did the robot steal?",
+         "type": "select",
+         "required": false,
+         "code": "FuelStolen",
+         "formResetBehavior": "reset",
+         "defaultValue": "",
+         "choices": {
+           "0": "0 Stolen",
+           "5": "1-10 Stolen",
+           "25": "10-40 Stolen",
+           "55": "40-70 Stolen",
+           "85": "70-100 Stolen",
+           "150": "100-200 Stolen",
+           "250": "200-300 Stolen",
+           "350": "300-400 Stolen",
+           "400": ">400 Stolen"
+         }
+       },
+       {
+         "title": "Did they/how did they Play Zone",
+         "description": "How did they steal fuel?",
+         "type": "multi-select",
+         "required": false,
+         "code": "ZoneDefense",
+         "formResetBehavior": "reset",
+         "choices": {
+           "Bumps": "Blocking bumps",
+           "Trenches": "Blocking trenches",
+           "In NZ": "In the Neutral zone",
+           "In AZ": "In the Alience zone"
+         }
+       }
+     ]
+   },
+   {
+     "name": "Defense Efficacy",
+     "fields": [
+       {
+         "title": "Defense Skill",
+         "description": "-10: Actively detrimental (many penalties) ------------------------------------ 0: Neither beneficial nor harmful ---------------------------------------------- 10: Minorly disrupts multiple robots/moderately hampers one robot ------- 20: Moderately disrupts multiple robots/severely hampers one robot ------ 30: Severely disrupts multiple robots/entirely shuts down one robot",
+         "type": "range",
+         "required": false,
+         "code": "DefenseSkill",
+         "formResetBehavior": "reset",
+         "defaultValue": 0,
+         "min": -10,
+         "max": 30,
+         "step": 1
+       },
+       {
+         "title": "Penalties",
+         "description": "How many penalties did they get playing defense?",
+         "type": "counter",
+         "required": false,
+         "code": "Penalties",
+         "formResetBehavior": "reset",
+         "defaultValue": 0,
+         "min": 0,
+         "step": 1
+       },
+       {
+         "title": "Endgame",
+         "description": "What did they do in endgame? Did they leave the zone? Did they get tower penalties?",
+         "type": "text",
+         "required": false,
+         "code": "Endgame1",
+         "formResetBehavior": "reset",
+         "defaultValue": ""
+       },
+       {
+         "title": "Comments",
+         "description": "Comments about defense",
+         "type": "text",
+         "required": false,
+         "code": "AutoComments",
+         "formResetBehavior": "reset",
+         "defaultValue": ""
+       },
+       {
+         "title": "Version ID",
+         "description": "To check which version of the form this is.",
+         "type": "select",
+         "required": true,
+         "code": "VersionID",
+         "formResetBehavior": "preserve",
+         "defaultValue": "0",
+         "choices": {
+           "0": "5/12/26.1"
+         }
+       }
+     ]
+   }
+ ]
 }
